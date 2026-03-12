@@ -15,7 +15,7 @@ $options = [
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);
     echo "Connected successfully";
-} catch (\\\PDOException $e) {
-    throw new \\PDOException($e->getMessage(), (int)$e->getCode());
+} catch (\PDOException $e) { // Fixed: Single backslash
+    throw new \PDOException($e->getMessage(), (int)$e->getCode()); // Fixed: Single backslash
 }
 ?>
