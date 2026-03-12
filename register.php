@@ -5,18 +5,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
+    $full_name = $_POST['full_name'];
+    $bio = $_POST['bio'];
+    $avatar_url = $_POST['avatar_url'];
 
     try {
         // Insert into users table
-        $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
+        $stmt = $pdo->prepare("INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)");
         $stmt->execute([$username, $email, $password]);
         $user_id = $pdo->lastInsertId();
 
         // Insert into profiles table
-        $stmt = $pdo->prepare("INSERT INTO profiles (user_id, first_name, last_name) VALUES (?, ?, ?)");
-        $stmt->execute([$user_id, $first_name, $last_name]);
+        $stmt = $pdo->prepare("INSERT INTO profiles (user_id, full_name, bio, avatar_url) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$user_id, $full_name, $bio, $avatar_url]);
 
         echo "Registration successful!";
     } catch (\PDOException $e) {
@@ -41,10 +42,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="email" id="email" name="email" required><br><br>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required><br><br>
-        <label for="first_name">First Name:</label>
-        <input type="text" id="first_name" name="first_name" required><br><br>
-        <label for="last_name">Last Name:</label>
-        <input type="text" id="last_name" name="last_name" required><br><br>
+        <label for="full_name">Full Name:</label>
+        <input type="text" id="full_name" name="full_name" required><br><br>
+        <label for="bio">Bio:</label>
+        <input type="text" id="bio" name="bio"><br><br>
+        <label for="avatar_url">Avatar URL:</label>
+        <input type="text" id="avatar_url" name="avatar_url"><br><br>
         <button type="submit">Register</button>
     </form>
 </body>
