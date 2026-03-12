@@ -1,5 +1,5 @@
 <?php
-$host = 'https://auth-db941.hstgr.io/';
+$host = 'auth-db941.hstgr.io';
 $db   = 'u237055794_team07';
 $user = 'u237055794_team07';
 $pass = 'S~3iYi5hr|h';
@@ -15,7 +15,7 @@ $options = [
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);
     echo "Connected successfully";
-} catch (\PDOException $e) {
-    throw new \PDOException($e->getMessage(), (int)$e->getCode());
+} catch (\\\PDOException $e) {
+    throw new \\PDOException($e->getMessage(), (int)$e->getCode());
 }
 ?>
