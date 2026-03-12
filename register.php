@@ -5,9 +5,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $full_name = $_POST['full_name'];
-    $bio = $_POST['bio'];
-    $avatar_url = $_POST['avatar_url'];
+    $full_name = $_POST['full_name'] ?? ''; // Provide a default value if not set
+    $bio = $_POST['bio'] ?? ''; // Provide a default value if not set
+    $avatar_url = $_POST['avatar_url'] ?? ''; // Provide a default value if not set
 
     try {
         // Insert into users table
