@@ -1,5 +1,5 @@
 <?php
-$host = 'https://auth-db941.hstgr.io/';
+$host = 'auth-db941.hstgr.io';
 $db   = 'u237055794_team07';
 $user = 'u237055794_team07';
 $pass = 'S~3iYi5hr|h';
