@@ -1,0 +1,51 @@
+/* Custom Theme Overrides */
+
+body {
+    background-color: #FDFBF7; /* Creamy White */
+    color: #3E2723; /* Dark Brown Text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Update Bootstrap Buttons to use our Yellow/Gold */
+.btn-primary {
+    background-color: #D4A017 !important;
+    border-color: #D4A017 !important;
+    color: #3E2723 !important;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: #B8860B !important; /* Slightly darker gold */
+    border-color: #B8860B !important;
+}
+
+/* Card Styling for a clean look */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #E0D7C6; /* Light brownish border */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(62, 39, 35, 0.05);
+}
+
+.card-header {
+    background-color: #3E2723;
+    color: #FDFBF7;
+    border-bottom: none;
+}
+
+/* Links */
+a {
+    color: #D4A017;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #3E2723;
+    text-decoration: underline;
+}
+
+/* Input Fields */
+.form-control:focus {
+    border-color: #D4A017;
+    box-shadow: 0 0 0 0.25 ra(212, 160, 23, 0.25);
+}
