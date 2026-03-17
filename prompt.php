@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-$_SESSION['user_id'] = 1;
 // Require your functions file to access is_logged_in()
 require_once 'functions.php';
 
